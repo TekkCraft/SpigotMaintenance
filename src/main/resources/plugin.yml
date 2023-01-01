@@ -3,7 +3,7 @@ name: SpigotMaintenance
 # Your main executable class (change package name to your package)
 main: ch.tekk.spigotmaintenance.Main
 # Plugin version
-version: 0.0.1-SNAPSHOT
+version: 1.0
 api-version: 1.19
 # Your name
 author: Example

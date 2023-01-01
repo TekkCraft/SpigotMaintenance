@@ -5,7 +5,7 @@
     <!-- Change to your preferred artifact ID -->
     <artifactId>SpigotMaintenance</artifactId>
     <!-- Change to your plugin version -->
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <!-- Change to your plugin name -->
     <name>SpigotMaintenance</name>
     <pluginRepositories>
