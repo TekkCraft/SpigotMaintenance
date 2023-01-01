@@ -1,0 +1,3 @@
+# Put the default configuration for your plugin in here (YAML format)
+# YAML formatting: https://docs.fileformat.com/programming/yaml/
+exampleMessage: "Hello World!"

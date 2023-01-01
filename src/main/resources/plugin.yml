@@ -1,0 +1,34 @@
+# Plugin name
+name: SpigotMavenBase
+# Your man executable class (change package name to your package)
+main: org.example.spigotmavenbase.Main
+# Plugin version
+version: 0.0.1-SNAPSHOT
+api-version: 1.19
+# Your name
+author: Example
+# Your website related to the plugin (optional)
+website: https://example.org/
+# Plugin description
+description: A simple spigot plugin using maven.
+# Available commands of your plugin
+commands:
+  # Command name
+  example:
+    # Command description
+    description: Example command
+    # Usage of the command (<command> is a placeholder that will automatically be replaced by the command name)
+    usage: /<command>
+    # Permissions needed for this command (Prefix must be unique so as not to have any conflicts with other plugins)
+    permission: spigotmavenbase.example
+# Plugin permissions
+permissions:
+  # Base permission
+  spigotmavenbase.*:
+    description: Gives access to all commands of your plugin
+    children:
+      # Specific permissions
+      spigotmavenbase.example:
+        description: Gives access to the example command
+        # Only server operators have this permission by default
+        default: op
