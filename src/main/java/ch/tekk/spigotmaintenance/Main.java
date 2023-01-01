@@ -1,9 +1,11 @@
-package org.example.spigotmavenbase;
+package ch.tekk.spigotmaintenance;
 
-import org.example.spigotmavenbase.command.ExampleCommand;
+import ch.tekk.spigotmaintenance.command.MaintenanceAction;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.example.spigotmavenbase.listener.PlayerJoinListener;
+import ch.tekk.spigotmaintenance.listener.PlayerJoinListener;
+
+import java.util.Objects;
 
 /**
  * The main class of your plugin.
@@ -22,10 +24,10 @@ public class Main extends JavaPlugin {
         this.ensureConfig();
 
         // Register command
-        this.getCommand("example").setExecutor(new ExampleCommand(this.config));
+        Objects.requireNonNull(this.getCommand("maintenance")).setExecutor(new MaintenanceAction(this.config, this));
 
         // Register event
-        this.getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerJoinListener(this.config), this);
     }
 
     /**

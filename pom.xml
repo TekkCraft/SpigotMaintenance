@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- Change to your package name -->
-    <groupId>org.example.spigotmavenbase</groupId>
+    <groupId>ch.tekk.spigotmaintenance</groupId>
     <!-- Change to your preferred artifact ID -->
-    <artifactId>SpigotMavenBase</artifactId>
+    <artifactId>SpigotMaintenance</artifactId>
     <!-- Change to your plugin version -->
     <version>0.0.1-SNAPSHOT</version>
     <!-- Change to your plugin name -->
-    <name>SpigotMavenBase</name>
+    <name>SpigotMaintenance</name>
     <pluginRepositories>
         <pluginRepository>
             <id>maven-snapshots</id>
@@ -16,7 +16,7 @@
     </pluginRepositories>
     <build>
         <!-- Change to what you want your exported plugin jar to be named -->
-        <finalName>SpigotMavenBase</finalName>
+        <finalName>SpigotMaintenance</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
             <resource>
@@ -48,36 +48,9 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <!-- Change to your package name -->
-                            <mainClass>org.example.spigotmavenbase.Main</mainClass>
+                            <mainClass>ch.tekk.spigotmaintenance.Main</mainClass>
                         </manifest>
                     </archive>
-                </configuration>
-            </plugin>
-            <!-- The following plugin is required if you want to shade other plugins into your jar.
-            By shading you can include content from other plugins into your plugin
-            without requiring users to also install the other plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.1</version>
-                <executions>
-                    <execution>
-                        <id>shade</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- In this example the nbtapi plugin (https://www.spigotmc.org/resources/nbt-api.7939/) is shaded
-                    into the plugin and can be accessed as org.example.spigotmavenbase.nbt -->
-                    <relocations>
-                        <relocation>
-                            <pattern>de.tr7zw.changeme.nbtapi</pattern>
-                            <shadedPattern>org.example.spigotmavenbase.nbt</shadedPattern>
-                        </relocation>
-                    </relocations>
                 </configuration>
             </plugin>
             <plugin>
@@ -92,28 +65,14 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
-        <!-- CodeMC -->
-        <!-- This is the location of the nbtapi plugin -->
-        <repository>
-            <id>codemc-repo</id>
-            <url>https://repo.codemc.org/repository/maven-public/</url>
-            <layout>default</layout>
-        </repository>
     </repositories>
     <dependencies>
         <!-- The spigot version this plugin is made for -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.19.2-R0.1-SNAPSHOT</version>
+            <version>1.19-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
-        </dependency>
-        <!-- The version of the nbtapi plugin to shade into your project -->
-        <dependency>
-            <groupId>de.tr7zw</groupId>
-            <artifactId>item-nbt-api</artifactId>
-            <version>2.11.1</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>

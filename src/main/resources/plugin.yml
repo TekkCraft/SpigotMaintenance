@@ -1,7 +1,7 @@
 # Plugin name
-name: SpigotMavenBase
-# Your man executable class (change package name to your package)
-main: org.example.spigotmavenbase.Main
+name: SpigotMaintenance
+# Your main executable class (change package name to your package)
+main: ch.tekk.spigotmaintenance.Main
 # Plugin version
 version: 0.0.1-SNAPSHOT
 api-version: 1.19
@@ -13,22 +13,31 @@ website: https://example.org/
 description: A simple spigot plugin using maven.
 # Available commands of your plugin
 commands:
-  # Command name
-  example:
-    # Command description
-    description: Example command
-    # Usage of the command (<command> is a placeholder that will automatically be replaced by the command name)
+  maintenance:
+    description: Check if the server is in maintenance
     usage: /<command>
-    # Permissions needed for this command (Prefix must be unique so as not to have any conflicts with other plugins)
-    permission: spigotmavenbase.example
-# Plugin permissions
+    permission: spigotmaintenance.info
+  maintenance enable:
+    description: Enable maintenance mode
+    usage: /<command>
+    permission: spigotmaintenance.enable
+  maintenance disable:
+    description: Disable maintenance mode
+    usage: /<command>
+    permission: spigotmaintenance.disable
 permissions:
-  # Base permission
-  spigotmavenbase.*:
+  spigotmaintenance.*:
     description: Gives access to all commands of your plugin
     children:
-      # Specific permissions
-      spigotmavenbase.example:
-        description: Gives access to the example command
-        # Only server operators have this permission by default
+      spigotmaintenance.info:
+        description: Check if the server is in maintenance mode
+        default: op
+      spigotmaintenance.enable:
+        description: Allows enabling of maintenance mode
+        default: op
+      spigotmaintenance.disable:
+        description: Allows disabling of maintenance mode
+        default: op
+      spigotmaintenance.bypass:
+        description: Bypasses maintenance mode
         default: op

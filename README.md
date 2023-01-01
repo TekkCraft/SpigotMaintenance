@@ -34,7 +34,7 @@ https://www.spigotmc.org/wiki/creating-a-blank-spigot-plugin-in-eclipse/
 
 ## Setup
 * Clone repository or download source code
-* Rename org.example.spigotmavenbase to your preferred package name (See "[Naming your package](#naming-your-package)")
+* Rename ch.tekk.spigotmaintenance to your preferred package name (See "[Naming your package](#naming-your-package)")
 * Make the necessary adjustments as instructed in the pom.xml
 * Make the necessary adjustments as instructed in the plugin.yml
 
@@ -52,7 +52,7 @@ You can name your package following these guidelines:
 
 ## Generate jar
 To generate the plugin jar file to be used in your server open CMD in the root directory of the source code and run `mvn package`.  
-The jar will be generated in `target/SpigotMavenBase.jar`.
+The jar will be generated in `target/spigotmaintenance.jar`.
 
 ## Testing your plugin
 Move the generated jar into the plugins folder of your server and run the `/reload` command.  
