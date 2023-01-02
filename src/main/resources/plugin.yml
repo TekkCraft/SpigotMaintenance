@@ -17,14 +17,6 @@ commands:
     description: Check if the server is in maintenance
     usage: /<command>
     permission: spigotmaintenance.info
-  maintenance enable:
-    description: Enable maintenance mode
-    usage: /<command>
-    permission: spigotmaintenance.enable
-  maintenance disable:
-    description: Disable maintenance mode
-    usage: /<command>
-    permission: spigotmaintenance.disable
 permissions:
   spigotmaintenance.*:
     description: Gives access to all commands of your plugin

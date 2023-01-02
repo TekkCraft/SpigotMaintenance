@@ -1,6 +1,7 @@
 package ch.tekk.spigotmaintenance;
 
 import ch.tekk.spigotmaintenance.command.MaintenanceAction;
+import ch.tekk.spigotmaintenance.command.MaintenanceTabCompleter;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import ch.tekk.spigotmaintenance.listener.PlayerJoinListener;
@@ -25,6 +26,7 @@ public class Main extends JavaPlugin {
 
         // Register command
         Objects.requireNonNull(this.getCommand("maintenance")).setExecutor(new MaintenanceAction(this.config, this));
+        Objects.requireNonNull(this.getCommand("maintenance")).setTabCompleter(new MaintenanceTabCompleter(this.config));
 
         // Register event
         this.getServer().getPluginManager().registerEvents(new PlayerJoinListener(this.config), this);
